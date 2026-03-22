@@ -10,21 +10,54 @@
 }
 
 .tab-btn {
-  padding: 12px 24px;
+  padding: 10px 24px;
   background: transparent;
   border: none;
-  border-bottom: 2px solid transparent;
   font-weight: 600;
   font-size: 1rem;
   color: var(--text-muted);
   cursor: pointer;
-  transition: var(--transition);
   white-space: nowrap;
+  border-radius: 24px;
+  margin-right: 8px;
+  transition: all 0.3s ease;
 }
-.tab-btn:hover { color: var(--primary); }
+
+.tab-btn:hover { background: rgba(0, 43, 94, 0.05); color: var(--primary); }
+
 .tab-btn.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 43, 94, 0.2);
+}
+
+.balance-card {
+  background: linear-gradient(135deg, var(--primary), #1e3a5a);
+  color: white;
+  border: none;
+  border-radius: 24px;
+}
+.balance-card h3.text-muted { color: rgba(255,255,255,0.8) !important; }
+.balance-card h1 { color: white !important; }
+
+.balance-card .btn-outline {
+  border-color: rgba(255,255,255,0.3);
+  color: white;
+}
+.balance-card .btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+}
+.balance-card .btn-primary {
+  background: white;
   color: var(--primary);
-  border-bottom-color: var(--primary);
+  font-weight: 700;
+}
+.balance-card .btn-primary:hover {
+  background: #f8fafc;
+}
+
+.tx-card {
+  border-radius: 24px;
 }
 
 .tx-list {
@@ -33,10 +66,11 @@
 }
 
 .border-b { border-bottom: 1px solid var(--border-color); }
-.pb-4 { padding-bottom: 16px; }
+.pb-4 { padding-bottom: 16px; margin-bottom: 16px; }
 
 .sub-card {
   transition: transform 0.3s ease;
+  border-radius: 24px;
 }
 .sub-card:hover {
   transform: translateY(-5px);

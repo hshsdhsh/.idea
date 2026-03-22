@@ -2,37 +2,45 @@ import React from 'react';
 
 const AgentsPage = () => {
   return (
-    <div className="container" style={{padding: '40px 24px'}}>
-      <div className="text-center" style={{marginBottom: '48px'}}>
-        <h1 className="section-title" style={{marginBottom: '16px'}}>Надежные брокеры и агенты</h1>
-        <p className="text-muted" style={{fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto'}}>
-          Профессионалы, которые помогут безопасно купить или продать недвижимость. Рейтинги формируются автоматически на основе реальных проверенных Escrow-сделок.
-        </p>
-      </div>
+    <div className="container" style={{padding: '24px 16px', maxWidth: '400px', margin: '0 auto'}}>
+       {/* Simulate Phone 1 Mobile view exactly as in mockup */}
+       <div className="card" style={{padding: 0, overflow: 'hidden', borderRadius: '24px', boxShadow: 'var(--shadow-lg)', border: 'none'}}>
+         <div style={{background: 'var(--primary)', padding: '32px 24px', textAlign: 'center', color: 'white', position: 'relative'}}>
+            <div style={{position: 'absolute', top: '16px', left: '16px', fontSize: '1.2rem'}}>←</div>
+            <div style={{position: 'absolute', top: '16px', right: '16px', fontSize: '1.2rem'}}>⚙️</div>
 
-      <div className="grid" style={{gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '24px'}}>
-        <div className="card text-center">
-          <div style={{width: '80px', height: '80px', borderRadius: '50%', background: 'linear-gradient(135deg, var(--accent), #60a5fa)', margin: '0 auto 16px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '2rem', fontWeight: 'bold'}}>ДА</div>
-          <h3 style={{fontSize: '1.25rem', color: 'var(--primary)', fontWeight: '600'}}>Давид Арутюнян</h3>
-          <p className="text-muted" style={{marginBottom: '16px'}}>Эксперт по Центру и Арабкиру</p>
-          <div className="flex justify-center gap-2" style={{marginBottom: '24px'}}>
-            <span className="badge badge-success">Рейтинг: 4.9 ★</span>
-            <span className="badge" style={{background: '#f8fafc', border: '1px solid #e2e8f0'}}>45 Сделок</span>
-          </div>
-          <button className="btn btn-primary w-full">Связаться в чате</button>
-        </div>
+            <div style={{width: '90px', height: '90px', borderRadius: '50%', margin: '0 auto 16px', overflow: 'hidden', border: '3px solid white', background: '#e2e8f0'}}>
+               <img src="https://i.pravatar.cc/150?img=11" alt="Armen" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+            </div>
+            <h2 style={{fontSize: '1.4rem', marginBottom: '4px', fontWeight: '600'}}>Արմեն Խաչատրյան</h2>
+            <p style={{opacity: 0.9, fontSize: '0.95rem', marginBottom: '8px'}}>Գույքի Գործակալ</p>
+            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '4px', color: '#fbbf24', fontWeight: '600'}}>
+               4.8 <span style={{fontSize: '1.1rem'}}>★</span>
+            </div>
+         </div>
+         
+         <div style={{padding: '24px'}}>
+            <button className="btn btn-primary w-full" style={{marginBottom: '24px', borderRadius: '12px', padding: '14px', fontSize: '1.1rem', background: 'var(--primary)'}}>Կապվել</button>
+            
+            <div className="flex" style={{borderBottom: '1px solid var(--border-color)', marginBottom: '24px'}}>
+               <div style={{flex: 1, textAlign: 'center', padding: '12px', borderBottom: '3px solid var(--primary)', color: 'var(--primary)', fontWeight: '700'}}>Ակտիվ</div>
+               <div style={{flex: 1, textAlign: 'center', padding: '12px', color: 'var(--text-muted)', fontWeight: '500'}}>Active</div>
+            </div>
 
-        <div className="card text-center">
-          <div style={{width: '80px', height: '80px', borderRadius: '50%', background: 'linear-gradient(135deg, #f59e0b, #fbbf24)', margin: '0 auto 16px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: '2rem', fontWeight: 'bold'}}>AA</div>
-          <h3 style={{fontSize: '1.25rem', color: 'var(--primary)', fontWeight: '600'}}>Ани Асатрян</h3>
-          <p className="text-muted" style={{marginBottom: '16px'}}>Коммерческая недвижимость</p>
-          <div className="flex justify-center gap-2" style={{marginBottom: '24px'}}>
-            <span className="badge badge-success">Рейтинг: 5.0 ★</span>
-            <span className="badge" style={{background: '#f8fafc', border: '1px solid #e2e8f0'}}>120 Сделок</span>
-          </div>
-          <button className="btn btn-primary w-full">Связаться в чате</button>
-        </div>
-      </div>
+            <div className="property-card" style={{border: '1px solid var(--border-color)', borderRadius: '16px', overflow: 'hidden'}}>
+               <div className="property-image img-1" style={{height: '160px'}}>
+                  <span className="verified-badge">Ստուգված</span>
+               </div>
+               <div style={{padding: '16px'}}>
+                  <h4 style={{fontSize: '1.1rem', marginBottom: '4px', color: 'var(--primary)', fontWeight: '700'}}>Վարձակալություն</h4>
+                  <div className="flex justify-between items-end">
+                     <span style={{fontWeight: '700', fontSize: '1.2rem'}}>250,000 ֏</span>
+                     <span style={{color: 'var(--success)', fontWeight: '600', fontSize: '0.9rem', background: 'rgba(16, 185, 129, 0.1)', padding: '4px 10px', borderRadius: '8px'}}>Ստուգված</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+       </div>
     </div>
   );
 };

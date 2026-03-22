@@ -1,55 +1,103 @@
 .mobile-nav {
-  display: none;
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
-  background: var(--surface);
+  right: 0;
+  height: auto;
+  min-height: 70px;
+  background-color: white;
   border-top: 1px solid var(--border-color);
-  padding: 8px 16px;
-  padding-bottom: calc(8px + env(safe-area-inset-bottom)); /* Support iOS home indicator */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+  padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
   z-index: 1000;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.03);
 }
 
-.mobile-nav-item {
+.mobile-nav-item, .mobile-nav-item-add {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
   flex: 1;
-  gap: 4px;
   cursor: pointer;
   color: var(--text-muted);
-  transition: var(--transition);
-  padding: 8px 4px;
-  border-radius: 8px;
+  transition: all 0.2s ease;
+  position: relative;
 }
 
-.mobile-nav-item:hover {
-  background: rgba(37, 99, 235, 0.05);
+.mobile-nav-item:active {
+  transform: scale(0.95);
 }
 
 .mobile-nav-icon {
-  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.nav-svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--text-muted);
+  transition: all 0.2s ease;
 }
 
 .mobile-nav-text {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .mobile-nav-item.active {
-  color: var(--accent);
+  color: var(--primary);
 }
 
-.mobile-nav-item.active .mobile-nav-icon {
-  transform: scale(1.1);
+.mobile-nav-item.active .nav-svg {
+  stroke: var(--primary);
+  fill: rgba(0, 43, 94, 0.1);
 }
 
-@media (max-width: 768px) {
+.mobile-nav-item.active .mobile-nav-text {
+  font-weight: 700;
+}
+
+/* Add Button specifically styled to be slightly larger or highlighted */
+.mobile-nav-item-add {
+  position: relative;
+}
+
+.add-button-bg {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 43, 94, 0.3);
+  margin-bottom: 2px;
+  transform: translateY(-8px);
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-item-add:active .add-button-bg {
+  transform: translateY(-8px) scale(0.9);
+}
+
+.nav-svg-add {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+}
+
+@media (min-width: 769px) {
   .mobile-nav {
-    display: flex;
-    justify-content: space-between;
+    display: none;
   }
 }

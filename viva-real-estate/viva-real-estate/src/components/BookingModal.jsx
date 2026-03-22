@@ -7,7 +7,7 @@ const BookingModal = ({ property, onClose, navigate }) => {
 
   return (
     <div className="modal-overlay glass-search" style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000}}>
-      <div className="card booking-modal">
+      <div className="card booking-modal" style={{borderRadius: '24px'}}>
         <div className="flex justify-between items-center" style={{marginBottom: '16px'}}>
           <h2 style={{color: 'var(--primary)'}}>{property.title}</h2>
           <button className="btn btn-outline" style={{padding: '4px 12px'}} onClick={onClose}>✕</button>
@@ -39,7 +39,7 @@ const BookingModal = ({ property, onClose, navigate }) => {
             </ul>
           </div>
 
-          <div className="booking-form card bg-surface">
+          <div className="booking-form card bg-surface" style={{borderRadius: '24px'}}>
             <h3 style={{marginBottom: '16px'}}>{property.price.toLocaleString()} ֏ <span style={{fontSize: '1rem', color: 'var(--text-muted)'}}>/ период</span></h3>
             
             <label className="text-muted" style={{display: 'block', marginBottom: '8px', fontWeight: 600}}>Даты заезда</label>
@@ -53,7 +53,7 @@ const BookingModal = ({ property, onClose, navigate }) => {
               <span style={{fontWeight: 700, fontSize: '1.25rem', color: 'var(--primary)'}}>{total.toLocaleString()} ֏</span>
             </div>
 
-            <button className="btn btn-primary w-full" onClick={() => navigate('wallet')}>Забронировать (Escrow)</button>
+            <button className="btn btn-primary w-full" onClick={() => navigate('wallet')} style={{borderRadius: '12px', padding: '14px', fontSize: '1.1rem'}}>Забронировать (Escrow)</button>
             <p className="text-center text-muted" style={{fontSize: '0.8rem', marginTop: '12px'}}>*Сумма будет надежно заморожена в вашем кошельке до успешного заселения</p>
           </div>
         </div>

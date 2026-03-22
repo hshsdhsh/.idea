@@ -2,12 +2,13 @@ import { useState } from 'react';
 import Navbar from './components/Navbar';
 import LandingPage from './pages/LandingPage';
 import WalletDashboard from './pages/WalletDashboard';
-import RentDashboard from './pages/RentDashboard';
 import OwnerDashboard from './pages/OwnerDashboard';
 import AgentsPage from './pages/AgentsPage';
 import CleaningPage from './pages/CleaningPage';
 import Messenger from './pages/Messenger';
 import AdminDashboard from './pages/AdminDashboard';
+import ProfilePage from './pages/ProfilePage';
+import SearchPage from './pages/SearchPage';
 import MobileNav from './components/MobileNav';
 import { translations } from './translations';
 import './index.css';
@@ -36,25 +37,40 @@ const getDefaultLang = () => {
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [lang, setLang] = useState(getDefaultLang());
+  const [chatSeed, setChatSeed] = useState(null);
 
   const handleLangChange = (newLang) => {
     setLang(newLang);
     localStorage.setItem('viva_lang', newLang);
   };
 
+  const handleOpenChat = (chatEntry) => {
+    setChatSeed(chatEntry);
+    setCurrentPage('chat');
+  };
+
   const t = translations[lang] || translations['en'];
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'home': return <LandingPage navigate={setCurrentPage} t={t} />;
-      case 'wallet': return <WalletDashboard navigate={setCurrentPage} t={t} />;
-      case 'rent': return <RentDashboard navigate={setCurrentPage} t={t} />;
-      case 'owner': return <OwnerDashboard navigate={setCurrentPage} t={t} />;
+      case 'home':
+      case 'rent': 
+        return <LandingPage navigate={setCurrentPage} t={t} onOpenChat={handleOpenChat} />;
+      case 'search':
+        return <SearchPage navigate={setCurrentPage} t={t} onOpenChat={handleOpenChat} />;
+      case 'wallet': 
+        return <WalletDashboard navigate={setCurrentPage} t={t} />;
+      case 'profile':
+        return <ProfilePage navigate={setCurrentPage} t={t} lang={lang} setLang={handleLangChange} />;
+      case 'owner': 
+      case 'add':
+        return <OwnerDashboard navigate={setCurrentPage} t={t} />;
       case 'agents': return <AgentsPage navigate={setCurrentPage} t={t} />;
       case 'cleaning': return <CleaningPage navigate={setCurrentPage} t={t} />;
-      case 'chat': return <Messenger navigate={setCurrentPage} t={t} />;
+      case 'chat':
+        return <Messenger navigate={setCurrentPage} t={t} chatSeed={chatSeed} onChatSeeded={() => setChatSeed(null)} />;
       case 'admin': return <AdminDashboard navigate={setCurrentPage} t={t} />;
-      default: return <LandingPage navigate={setCurrentPage} t={t} />;
+      default: return <LandingPage navigate={setCurrentPage} t={t} onOpenChat={handleOpenChat} />;
     }
   };
 

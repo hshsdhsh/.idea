@@ -11,10 +11,11 @@ const Navbar = ({ currentPage, navigate, lang, setLang, t }) => {
         </div>
         
         <div className="navbar-links">
-          <button className={`nav-link ${currentPage === 'rent' ? 'active' : ''}`} onClick={() => navigate('rent')}>{t.nav.rent}</button>
-          <button className={`nav-link ${currentPage === 'owner' ? 'active' : ''}`} onClick={() => navigate('owner')}>{t.nav.let}</button>
-          <button className={`nav-link ${currentPage === 'agents' ? 'active' : ''}`} onClick={() => navigate('agents')}>{t.nav.agents}</button>
-          <button className={`nav-link ${currentPage === 'cleaning' ? 'active' : ''}`} onClick={() => navigate('cleaning')}>{t.nav.cleaning}</button>
+          <button className={`nav-link ${currentPage === 'home' ? 'active' : ''}`} onClick={() => navigate('home')}>{t.nav.home}</button>
+          <button className={`nav-link ${currentPage === 'search' ? 'active' : ''}`} onClick={() => navigate('search')}>{t.nav.search}</button>
+          <button className={`nav-link ${currentPage === 'add' ? 'active' : ''}`} onClick={() => navigate('add')}>{t.nav.add}</button>
+          <button className={`nav-link ${currentPage === 'chat' ? 'active' : ''}`} onClick={() => navigate('chat')}>{t.nav.chat}</button>
+          <button className={`nav-link ${currentPage === 'profile' ? 'active' : ''}`} onClick={() => navigate('profile')}>{t.nav.profile}</button>
         </div>
 
         <div className="navbar-actions flex items-center gap-4">

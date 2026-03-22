@@ -20,7 +20,7 @@ const WalletDashboard = ({ navigate }) => {
         </div>
       </div>
 
-      <div className="tabs-container flex gap-4" style={{marginBottom: '32px', borderBottom: '1px solid var(--border-color)', overflowX: 'auto'}}>
+      <div className="tabs-container flex gap-4" style={{marginBottom: '32px', overflowX: 'auto', paddingBottom: '8px'}}>
         <button className={`tab-btn ${activeTab === 'wallet' ? 'active' : ''}`} onClick={() => setActiveTab('wallet')}>Кошелек</button>
         <button className={`tab-btn ${activeTab === 'subscriptions' ? 'active' : ''}`} onClick={() => setActiveTab('subscriptions')}>Подписки (Уровни)</button>
         <button className={`tab-btn ${activeTab === 'bookings' ? 'active' : ''}`} onClick={() => setActiveTab('bookings')}>Мои бронирования</button>
@@ -113,7 +113,7 @@ const WalletDashboard = ({ navigate }) => {
       )}
 
       {activeTab === 'bookings' && (
-        <div className="card">
+        <div className="card" style={{borderRadius: '24px'}}>
           <h3 style={{marginBottom: '24px', color: 'var(--primary)'}}>Активные и Прошлые Бронирования</h3>
           <div className="flex flex-col gap-4">
             <div className="search-input w-full flex justify-between items-center" style={{background: 'var(--surface)', border: 'none'}}>
