@@ -1,0 +1,55 @@
+.ad-container {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+  background-size: 300% auto;
+  border-radius: var(--radius);
+  color: white;
+  margin: 24px 0;
+  animation: shine 4s linear infinite;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.ad-container:hover {
+  transform: scale(1.02);
+}
+
+.ad-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ad-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+  flex: 1;
+  padding: 0 16px;
+}
+
+.ad-icon {
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+.ad-btn {
+  background: white;
+  color: #8b5cf6;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+@keyframes shine {
+  to {
+    background-position: 300% center;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
